@@ -1,0 +1,63 @@
+﻿@model EMS.ViewModels.EmployeVM.EditVM
+
+@{
+    ViewBag.Title = "بيانات الموظف";
+    Layout = "~/Views/Shared/_AuthenticatedLayout.cshtml";
+}
+
+
+<div class="ccard">
+    <div class="ccard-header">
+        <h4> تعديل بيانات الموظف </h4>
+    </div>
+    <div class="ccard-body">
+        @using (Html.BeginForm("update", "Employe", FormMethod.Post))
+        {
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.employe.name)
+                @Html.TextBoxFor(m => m.employe.name, new { @class = "cInput" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.employe.phoneNumber)
+                @Html.TextBoxFor(m => m.employe.phoneNumber, new { @class = "cInput" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.employe.address)
+                @Html.TextBoxFor(m => m.employe.address, new { @class = "cInput" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.employe.nationalID)
+                @Html.TextBoxFor(m => m.employe.nationalID, new { @class = "cInput" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.employe.maritalStateId)
+                @Html.DropDownListFor(m => m.employe.maritalStateId, new SelectList(Model.maritalStates, "id", "name", "قم بأختيار الحالة الاجتماعية"), new { @class = "cInput" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.employe.DOB)
+                @Html.TextBoxFor(m => m.employe.DOB, "{0:yyyy-MM-dd}", new { @class = "cInput", type = "date" })
+            </div>
+
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.employe.contractionDate)
+                @Html.TextBoxFor(m => m.employe.contractionDate, "{0:yyyy-MM-dd}", new { @class = "cInput", type = "date" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.employe.disablity)
+                @Html.TextBoxFor(m => m.employe.disablity, new { @class = "cInput", type = "number" })
+            </div>
+            @Html.HiddenFor(m => m.employe.id);
+            <input class="cButton" type="submit" value="تعديل بيانات الموظف" />
+        }
+    </div>
+</div>
+
+
+

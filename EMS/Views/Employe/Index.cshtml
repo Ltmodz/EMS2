@@ -1,7 +1,8 @@
-﻿
+﻿@model List<EMS.Models.Employe>
 @{
     ViewBag.Title = "العاملين";
     Layout = "~/Views/Shared/_AuthenticatedLayout.cshtml";
+    int i = 1;
 }
 
 <div class="ccard">
@@ -9,29 +10,46 @@
          <h4>العاملين بالمنظومة</h4>
          <a class="cButton" href="~/Employe/new">اضافة موظف جديد</a>
      </div>
-    <div class="ccard-body">
+     <div class="ccard-body">
 
-        <table class="cTable">
-            <thead>
-                <tr>
-                    <th>م</th>
-                    <th>اسم</th>
-                    <th>عنوان</th>
-                    <th>رقم تليفون</th>
-                    <th>نوع التعاقد</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>شيماء محمد عبدالعزيز محمد</td>
-                    <td>22ش كامل الجزار ــ امام سنترال المطرية ــ عين شمس الغربية</td>
-                    <td>01000210654</td>
-                    <td>مثبت</td>
-                </tr>
-            </tbody>
-        </table>
+         @if (Model.Count > 0)
+         {
+             <table class="cTable">
+                 <thead>
+                     <tr>
+                         <th>م</th>
+                         <th>اسم</th>
+                         <th>عنوان</th>
+                         <th>رقم تليفون</th>
+                         <th>نوع التعاقد</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     @{
+                         foreach (var employe in Model)
+                         {
+                             <tr>
+                                 <td>@i</td>
+                                 <td>@Html.ActionLink(@employe.name,"details","Employe",new {id = employe.id },null)</td>
+                                 <td>@employe.address</td>
+                                 <td>@employe.phoneNumber</td>
+                                 <td>مثبت</td>
+                             </tr>
+                             i++;
+                         }
+                     }
 
-    </div>
+                 </tbody>
+             </table>
+         }
+
+         else
+         {
+            <div class="cEmpty-warning">
+                <h4>لا يوجد موظفيين مسجلين بالمنظومة</h4>
+            </div>
+         }
+
+     </div>
 </div>
 

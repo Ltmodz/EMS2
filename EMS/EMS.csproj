@@ -184,13 +184,32 @@
     <Compile Include="Migrations\201905141219451_addedEmployeDataToDataBase.Designer.cs">
       <DependentUpon>201905141219451_addedEmployeDataToDataBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905151022160_addedMaritalStatesToDatabase.cs" />
+    <Compile Include="Migrations\201905151022160_addedMaritalStatesToDatabase.Designer.cs">
+      <DependentUpon>201905151022160_addedMaritalStatesToDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905151034120_fixedIssueWithDataTypeInMaritalStateTable.cs" />
+    <Compile Include="Migrations\201905151034120_fixedIssueWithDataTypeInMaritalStateTable.Designer.cs">
+      <DependentUpon>201905151034120_fixedIssueWithDataTypeInMaritalStateTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905151034559_seedMaritalStates.cs" />
+    <Compile Include="Migrations\201905151034559_seedMaritalStates.Designer.cs">
+      <DependentUpon>201905151034559_seedMaritalStates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905151106415_addedMaritalStateToEmploye.cs" />
+    <Compile Include="Migrations\201905151106415_addedMaritalStateToEmploye.Designer.cs">
+      <DependentUpon>201905151106415_addedMaritalStateToEmploye.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employe.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MaritalState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\EmployeVM\CreateVM.cs" />
+    <Compile Include="ViewModels\EmployeVM\EditVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -201,6 +220,7 @@
     <Content Include="Content\Card.css" />
     <Content Include="Content\cForms.css" />
     <Content Include="Content\cTable.css" />
+    <Content Include="Content\cWarnings.css" />
     <Content Include="Content\isi-inputs.css" />
     <Content Include="Content\SideMenu.css" />
     <Content Include="favicon.ico" />
@@ -265,6 +285,7 @@
     <Content Include="Views\Employe\Index.cshtml" />
     <Content Include="Views\Shared\_SideMenu.cshtml" />
     <Content Include="Views\Employe\New.cshtml" />
+    <Content Include="Views\Employe\details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -288,6 +309,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905141219451_addedEmployeDataToDataBase.resx">
       <DependentUpon>201905141219451_addedEmployeDataToDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905151022160_addedMaritalStatesToDatabase.resx">
+      <DependentUpon>201905151022160_addedMaritalStatesToDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905151034120_fixedIssueWithDataTypeInMaritalStateTable.resx">
+      <DependentUpon>201905151034120_fixedIssueWithDataTypeInMaritalStateTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905151034559_seedMaritalStates.resx">
+      <DependentUpon>201905151034559_seedMaritalStates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905151106415_addedMaritalStateToEmploye.resx">
+      <DependentUpon>201905151106415_addedMaritalStateToEmploye.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

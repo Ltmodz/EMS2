@@ -32,14 +32,26 @@ namespace EMS.Models
 
         [Required(ErrorMessage = "برجاء ادخال تاريخ الميلاد")]
         [Display(Name = " تاريخ الميلاد ")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DOB { get; set; }
 
         [Required(ErrorMessage = "برجاء ادخال تاريخ التعاقد")]
         [Display(Name = " تاريخ التعاقد")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime contractionDate { get; set; }
 
         [Required(ErrorMessage = "برجاء ادخال  نسبة العجز")]
         [Display(Name = " نسبة العجز")]
         public int disablity { get; set; }
+
+        //foregin keys
+
+        [Required(ErrorMessage = "برجاء ادخال  الحالة الاجتماعية ")]
+        [Display(Name = "  الحالة الاجتماعية")]
+        public int maritalStateId { get; set; }
+
+
+        //navigation properties
+        public MaritalState maritalState { get; set; }
     }
 }
