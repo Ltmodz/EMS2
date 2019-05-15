@@ -1,0 +1,20 @@
+﻿.cButton {
+    color: #FFFFFF;
+    background-color: #68B3C8;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    border-radius: 20px;
+    border-width:2px;
+    border-color: #68B3C8;
+    padding: 7px 18px;
+    border-style: solid;
+    transition: 0.3s;
+}
+
+    .cButton:hover {
+        color: #FFFFFF;
+        text-decoration: none;
+        background-color: #3091B2;
+        border-color: #3091B2;
+    }

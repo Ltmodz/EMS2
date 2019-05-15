@@ -1,0 +1,55 @@
+﻿@model EMS.Models.Employe
+
+@{
+    ViewBag.Title = "اضافة موظف جديد";
+    Layout = "~/Views/Shared/_AuthenticatedLayout.cshtml";
+}
+
+    <div class="ccard">
+        <div class="ccard-header">
+            <h4>بيانات الموظف</h4>
+        </div>
+        <div class="ccard-body">
+            @using (Html.BeginForm("Create", "Employe", FormMethod.Post))
+            {
+                <div class="cInput-group">
+                    @Html.LabelFor(m => m.name)
+                    @Html.TextBoxFor(m => m.name, new { @class = "cInput" })
+                </div>
+
+                <div class="cInput-group">
+                    @Html.LabelFor(m => m.phoneNumber)
+                    @Html.TextBoxFor(m => m.phoneNumber, new { @class = "cInput" })
+                </div>
+
+                <div class="cInput-group">
+                    @Html.LabelFor(m => m.address)
+                    @Html.TextBoxFor(m => m.address, new { @class = "cInput" })
+                </div>
+
+                <div class="cInput-group">
+                    @Html.LabelFor(m => m.nationalID)
+                    @Html.TextBoxFor(m => m.nationalID, new { @class = "cInput" })
+                </div>
+
+                <div class="cInput-group">
+                    @Html.LabelFor(m => m.DOB)
+                    @Html.TextBoxFor(m => m.DOB, new { @class = "cInput", type = "date" })
+                </div>
+
+
+                <div class="cInput-group">
+                    @Html.LabelFor(m => m.contractionDate)
+                    @Html.TextBoxFor(m => m.contractionDate, new { @class = "cInput", type = "date" })
+                </div>
+
+                <div class="cInput-group">
+                    @Html.LabelFor(m => m.disablity)
+                    @Html.TextBoxFor(m => m.disablity, new { @class = "cInput", type = "number" })
+                </div>
+
+                <input class="cButton" type="submit" value="اضافة الموظف" />
+            }
+        </div>
+    </div>
+

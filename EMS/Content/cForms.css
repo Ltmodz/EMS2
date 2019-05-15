@@ -1,0 +1,24 @@
+﻿input[type=submit]
+{
+    
+    margin: 10px auto;
+}
+
+
+.cInput-group
+{
+    width:100%;
+    margin-bottom:10px;
+}
+    .cInput-group > label {
+        font-family: Tajwal-Regular;
+        font-size: 16px;
+        color: #9A9A9A;
+        display:block;
+        font-weight:500;
+    }
+.cInput-group > input
+{
+    display:block;
+}
+
