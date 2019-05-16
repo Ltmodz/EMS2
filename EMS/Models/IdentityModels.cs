@@ -27,6 +27,8 @@ namespace EMS.Models
 
         public DbSet<Employe> Employes { get; set; }
         public DbSet<MaritalState> MaritalStates { get; set; }
+        public DbSet<JobDegree> JobDegrees { get; set; }
+        public DbSet<JobGroup> jobGroups { get; set; }
 
         public static ApplicationDbContext Create()
         {
