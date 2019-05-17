@@ -67,5 +67,12 @@ namespace EMS.Controllers
             return View(model);
         }
 
+        public ActionResult promote(int EmployeId)
+        {
+            Employe employe = db.Employes.Include("permenentUser").SingleOrDefault(e => e.id == EmployeId);
+
+            return View();
+        }
+
     }
 }

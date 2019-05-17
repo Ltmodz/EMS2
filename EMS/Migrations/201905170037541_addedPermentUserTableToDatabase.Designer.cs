@@ -7,13 +7,13 @@ namespace EMS.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class addedPermenetUserTableToDatabase : IMigrationMetadata
+    public sealed partial class addedPermentUserTableToDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedPermenetUserTableToDatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addedPermentUserTableToDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201905162106097_addedPermenetUserTableToDatabase"; }
+            get { return "201905170037541_addedPermentUserTableToDatabase"; }
         }
         
         string IMigrationMetadata.Source

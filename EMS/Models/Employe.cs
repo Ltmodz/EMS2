@@ -50,8 +50,11 @@ namespace EMS.Models
         [Display(Name = "  الحالة الاجتماعية")]
         public int maritalStateId { get; set; }
 
+        public int permenentUserId { get; set; }
+
 
         //navigation properties
         public MaritalState maritalState { get; set; }
+        public PermenentUser permenentUser { get; set; }
     }
 }

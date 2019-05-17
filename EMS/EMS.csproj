@@ -216,9 +216,9 @@
     <Compile Include="Migrations\201905162018411_seedJobGroupsTable.Designer.cs">
       <DependentUpon>201905162018411_seedJobGroupsTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905162106097_addedPermenetUserTableToDatabase.cs" />
-    <Compile Include="Migrations\201905162106097_addedPermenetUserTableToDatabase.Designer.cs">
-      <DependentUpon>201905162106097_addedPermenetUserTableToDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201905170037541_addedPermentUserTableToDatabase.cs" />
+    <Compile Include="Migrations\201905170037541_addedPermentUserTableToDatabase.Designer.cs">
+      <DependentUpon>201905170037541_addedPermentUserTableToDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -244,6 +244,7 @@
     <Content Include="Content\cForms.css" />
     <Content Include="Content\cTable.css" />
     <Content Include="Content\cWarnings.css" />
+    <Content Include="Content\EmployeDetails.css" />
     <Content Include="Content\isi-inputs.css" />
     <Content Include="Content\SideMenu.css" />
     <Content Include="favicon.ico" />
@@ -357,8 +358,8 @@
     <EmbeddedResource Include="Migrations\201905162018411_seedJobGroupsTable.resx">
       <DependentUpon>201905162018411_seedJobGroupsTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905162106097_addedPermenetUserTableToDatabase.resx">
-      <DependentUpon>201905162106097_addedPermenetUserTableToDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905170037541_addedPermentUserTableToDatabase.resx">
+      <DependentUpon>201905170037541_addedPermentUserTableToDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

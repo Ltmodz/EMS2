@@ -1,0 +1,7 @@
+﻿.employe-details {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    width: 100%;
+    height: auto;
+    grid-column-gap: 20px;
+}
