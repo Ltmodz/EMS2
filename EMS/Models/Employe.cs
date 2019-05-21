@@ -56,5 +56,7 @@ namespace EMS.Models
         //navigation properties
         public MaritalState maritalState { get; set; }
         public PermenentUser permenentUser { get; set; }
+
+        public IEnumerable<Training> trainings { get; set; }
     }
 }

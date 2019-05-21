@@ -1,0 +1,83 @@
+﻿@model EMS.ViewModels.TrainingsVM.IndexVM
+@{
+    ViewBag.Title = "استعلام عن دورات موظف";
+    Layout = "~/Views/Shared/_AuthenticatedLayout.cshtml";
+    int i = 1;
+}
+
+
+
+    <div class="ccard">
+
+        <div class="ccard-header">
+            @using (Html.BeginForm("Index", "Trainings", FormMethod.Post, new { @class = "cHorizontal-form" }))
+            {
+                <div class="cInput-group">
+                    @Html.LabelFor(m => m.employeId)
+                    @Html.DropDownListFor(m => m.employeId, new SelectList(Model.employes, "id", "name", "قم بأختيار الموظف "), new { @class = "cInput" })
+                </div>
+
+                <div style="position:relative">
+                    <input style="position:absolute; bottom:0" class="cButton" type="submit" value="  استعلام عن الدورات" />
+                </div>
+
+                <div style="position:relative">
+                    <a href="~/trainings/new" style="position:absolute;margin-bottom:10px;bottom:0"  class="cButton">اضافة دورة جديدة</a>
+                </div>
+
+            }
+        </div>
+        <div class="ccard-body">
+
+            @if (Model.trainings != null)
+            {
+                <table class="cTable">
+                    <thead>
+                        <tr>
+                            <th>م</th>
+                            <th>اسم الدورة</th>
+                            <th>تاريخ بد الدورة</th>
+                            <th>تاريخ انهاء الدورة </th>
+                            <th>نتيجة الدورة</th>
+                            <th>تقدير الدورة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var training in Model.trainings)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@Html.ActionLink(@training.name, "details", "Trainings", new { id = training.id }, null)</td>
+                                    <td>@training.startDate</td>
+                                    <td>@training.endDate</td>
+                                    <td>@training.result.name</td>
+                                    <td>@training.grade.name</td>
+                                </tr>
+                                i++;
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            }
+
+            else if (Model.employeId == 0)
+            {
+
+
+                <div class="cEmpty-warning">
+                    <h4>قم باختيار احد الموظفيين </h4>
+                </div>
+            }
+
+            else
+            {
+                <div class="cEmpty-warning">
+                    <h4>لا يوجد دورات تدريبية لهذا الموظف </h4>
+                </div>
+            }
+            
+
+        </div>
+    </div>

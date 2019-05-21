@@ -1,0 +1,71 @@
+﻿@model EMS.ViewModels.EmployeVM.PromotionVM
+
+
+<div class="ccard">
+    <div class="ccard-header">
+        <h4>بيانات الموظف</h4>
+    </div>
+    <div class="ccard-body">
+        @using (Html.BeginForm("promoteUser", "Employe", FormMethod.Post))
+        {
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.permenentUser.jobName)
+                @Html.TextBoxFor(m => m.permenentUser.jobName, new { @class = "cInput" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.permenentUser.qualification)
+                @Html.TextBoxFor(m => m.permenentUser.qualification, new { @class = "cInput" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.permenentUser.fileNumber)
+                @Html.TextBoxFor(m => m.permenentUser.fileNumber, new { @class = "cInput", type = "number" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.permenentUser.installmentNumber)
+                @Html.TextBoxFor(m => m.permenentUser.installmentNumber, new { @class = "cInput", type = "number" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.permenentUser.installmentDate)
+                @Html.TextBoxFor(m => m.permenentUser.installmentDate, "{0:yyyy-MM-dd}", new { @class = "cInput", type = "date" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.permenentUser.currentRankDate)
+                @Html.TextBoxFor(m => m.permenentUser.currentRankDate, "{0:yyyy-MM-dd}", new { @class = "cInput", type = "date" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.permenentUser.preRankDate)
+                @Html.TextBoxFor(m => m.permenentUser.preRankDate, "{0:yyyy-MM-dd}", new { @class = "cInput", type = "date" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.permenentUser.jobGroupId)
+                @Html.DropDownListFor(m => m.permenentUser.jobGroupId, new SelectList(Model.jobGroups, "id", "name", "قم بأختيار المجموعة الوظيفية"), new { @class = "cInput" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.permenentUser.jobDegreeId)
+                @Html.DropDownListFor(m => m.permenentUser.jobDegreeId, new SelectList(Model.jobDegrees, "id", "name", "قم بأختيار الدرجة الوظيفية"), new { @class = "cInput" })
+            </div>
+            if (Model.permenentUser == null)
+            {
+                @Html.Hidden("employeId", Url.RequestContext.RouteData.Values["id"])
+                <input class="cButton" type="submit" value="تعديل بيانات الموظف " />
+            }
+            else
+            {
+                @Html.Hidden("employeId", Model.permenentUser.id)
+                <input class="cButton" type="submit" value="تثبيت الموظف " />
+            }
+
+
+
+        }
+    </div>
+</div>
+

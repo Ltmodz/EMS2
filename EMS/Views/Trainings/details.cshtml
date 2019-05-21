@@ -1,0 +1,60 @@
+﻿@model EMS.ViewModels.TrainingsVM.DetailsVM
+@{
+    ViewBag.Title = "بيانات الدورة التدريبية<";
+    Layout = "~/Views/Shared/_AuthenticatedLayout.cshtml";
+}
+
+
+<div class="ccard">
+    <div class="ccard-header">
+        <h4>بيانات الدورة التدريبية</h4>
+    </div>
+    <div class="ccard-body">
+        @using (Html.BeginForm("update", "Trainings", FormMethod.Post))
+        {
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.training.name)
+                @Html.TextBoxFor(m => m.training.name, new { @class = "cInput" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.training.gradeId)
+                @Html.DropDownListFor(m => m.training.gradeId, new SelectList(Model.grades, "id", "name", "قم بأختيار تقدير الدورة "), new { @class = "cInput" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.training.resultId)
+                @Html.DropDownListFor(m => m.training.resultId, new SelectList(Model.results, "id", "name", "قم بأختيار نتيجة الدورة "), new { @class = "cInput" })
+            </div>
+
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.training.organization)
+                @Html.TextBoxFor(m => m.training.organization, new { @class = "cInput" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.training.startDate)
+                @Html.TextBoxFor(m => m.training.startDate, "{0:yyyy-MM-dd}", new { @class = "cInput", type = "date" })
+            </div>
+
+            <div class="cInput-group">
+                @Html.LabelFor(m => m.training.endDate)
+                @Html.TextBoxFor(m => m.training.endDate, "{0:yyyy-MM-dd}", new { @class = "cInput", type = "date" })
+            </div>
+
+            @Html.HiddenFor(m => m.training.id);
+            @Html.HiddenFor(m => m.training.employeId);
+
+            <input class="cButton" type="submit" value="تعديل الدورة التدريبية" />
+        }
+
+        @Html.ActionLink("خذف الدورة التدريبية", "delete", "Trainings", new { id = Model.training.id }, new {@class = "cButton"})
+
+    </div>
+</div>
+
+
+
+

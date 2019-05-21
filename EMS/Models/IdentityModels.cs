@@ -30,6 +30,9 @@ namespace EMS.Models
         public DbSet<JobDegree> JobDegrees { get; set; }
         public DbSet<JobGroup> jobGroups { get; set; }
         public DbSet<PermenentUser> permenentUsers { get; set; }
+        public DbSet<Result> results { get; set; }
+        public DbSet<Grade> grades { get; set; }
+        public DbSet<Training> trainings { get; set; }
 
         public static ApplicationDbContext Create()
         {

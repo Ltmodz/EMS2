@@ -28,13 +28,22 @@
                      @{
                          foreach (var employe in Model)
                          {
-                             <tr>
-                                 <td>@i</td>
-                                 <td>@Html.ActionLink(@employe.name,"details","Employe",new {id = employe.id },null)</td>
-                                 <td>@employe.address</td>
-                                 <td>@employe.phoneNumber</td>
-                                 <td>مثبت</td>
-                             </tr>
+                                          <tr>
+                                              <td>@i</td>
+                                              <td>@Html.ActionLink(@employe.name, "details", "Employe", new { id = employe.id }, null)</td>
+                                              <td>@employe.address</td>
+                                              <td>@employe.phoneNumber</td>
+
+                                              @if (@employe.permenentUser != null)
+                                              {
+                                                  <td>مثبت</td>
+                                              }
+                                              else
+                                              {
+                                                  <td>حساب جهة</td>
+                                              }
+
+                                          </tr>
                              i++;
                          }
                      }

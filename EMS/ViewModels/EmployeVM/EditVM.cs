@@ -10,5 +10,7 @@ namespace EMS.ViewModels.EmployeVM
     {
         public Employe employe { get; set; }
         public IEnumerable<MaritalState> maritalStates { get; set; }
+
+        public PromotionVM promotionVM { get; set; }
     }
 }
